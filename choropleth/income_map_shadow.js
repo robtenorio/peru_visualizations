@@ -26,7 +26,7 @@ let path = d3.geoPath()
 let path2 = d3.geoPath()
              .projection(projection);
 
-let svg = d3.select("body")
+let svg = d3.select("#chartContainer")
             .append("svg")
             .attr("width", w)
             .attr("height", h);
@@ -135,7 +135,7 @@ d3.csv("income_dept.csv", data => {
 		     //Update the tooltip name
 		     d3.select("#tooltip")
 		       .style("left", xPosition + "px")
-		       .style("top", yPosition + "px")
+		       .style("top", yPosition + 150 + "px")
 		       .select("#name")
 		       .text(d.properties.lower_name);
 
