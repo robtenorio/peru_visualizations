@@ -73,9 +73,27 @@
 				line-height: 18px;
 			}
 
+			.keeper {
+				overflow: hidden;
+			}
+
+			.one {
+				width: 70%;
+				height: 400px;
+				float: left;
+				}
+
+			.two {
+				margin-left: 70%;
+				height: 400px;
+			}
+
     </style>
   </head>
   <body>
+  	<div id="tooltip" class="hidden">
+  		<p><span id="name"></span></p>
+	</div>
 			<!-- New HTML structure and content! -->
 		<div id="container">
 
@@ -83,12 +101,13 @@
 			
 			<p>Rerum culpa qui libero. Non quidem suscipit facere ea totam. Sed ut reprehenderit non. Consequuntur alias minima qui saepe enim. Voluptatem quia quia eligendi temporibus dolor voluptas voluptatem recusandae. Quia minima delectus aliquid totam voluptatem enim alias quas.<p>
 
-			<div id="chartContainer">
-				<h2>Average Household Income in Peru (2016)&ndash;February 2017</h2>
-				  	<div id="tooltip" class="hidden">
-  		<p><strong>Department</strong></p>
-  		<p><span id="name"></span></p>
-	</div>
+			<div class="keeper">
+				<div class="one">
+					<h2>Average Annual Household Income in Peru&ndash;2016</h2>
+			    </div>
+				<div class="two">
+					<h2>Here will be some input</h2>
+				</div>
 			</div>
 
 			<p>Reiciendis reiciendis quia labore porro ratione. Asperiores est ipsam voluptate. Itaque in magni qui veritatis aliquam fugiat. Et qui aliquid et. Assumenda qui et quis ut. Dolores aut ea fuga corporis enim. Corporis iusto facere quidem architecto rerum pariatur. Libero nam et cupiditate quibusdam.</p>
