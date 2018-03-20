@@ -1,5 +1,5 @@
-let w = 800;
-let h = 300;
+let w = 1000;
+let h = 800;
 
 let projection = d3.geoAzimuthalEquidistant()
                    .scale([700])

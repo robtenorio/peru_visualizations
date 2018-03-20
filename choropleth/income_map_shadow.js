@@ -1,4 +1,4 @@
-let w = 800;
+let w = 700;
 let h = 300;
 
 let projection = d3.geoAzimuthalEquidistant()
@@ -26,10 +26,13 @@ let path = d3.geoPath()
 let path2 = d3.geoPath()
              .projection(projection);
 
-let svg = d3.select("#chartContainer")
+let svg = d3.select(".one")
             .append("svg")
             .attr("width", w)
             .attr("height", h);
+
+let btnOne = d3.select("#btn-one");
+let btnTwo = d3.select("#btn-two");
 
 let filter = svg.append("defs")
                 .append("filter")
@@ -92,8 +95,27 @@ d3.csv("income_dept.csv", data => {
 			//Grab department name
 			let dataDept = data[i].name;
 
-			//Grab income data value
 			let dataValue = parseFloat(data[i].w_income);
+
+			btnOne.on("click", () =>  {
+					color.domain([
+						d3.min(data, d => d.w_income),
+						d3.max(data, d => d.w_income)]);
+
+				dataValue = parseFloat(data[i].w_income);
+				console.log("button one clicked");
+			});
+
+			btnTwo.on("click", () => {
+					color.domain([
+						d3.min(data, d => d.w_food),
+						d3.max(data, d => d.w_food)]);
+
+				dataValue = parseFloat(data[i].w_food);
+				console.log("button two clicked");
+			});
+
+			//Grab income data value
 
 			//Find the corresponding deptartment inside the GeoJSON
 			for (let j = 0; j < json.features.length; j++) {
@@ -135,9 +157,9 @@ d3.csv("income_dept.csv", data => {
 		     //Update the tooltip name
 		     d3.select("#tooltip")
 		       .style("left", xPosition + "px")
-		       .style("top", yPosition + 150 + "px")
+		       .style("top", yPosition + 200 + "px")
 		       .select("#name")
-		       .text(d.properties.lower_name);
+		       .text(`Department: ${d.properties.NAME_1} \nValue: ${Math.round(d.properties.value)}`);
 
              //Show the tooltip
 		     d3.select("#tooltip").classed("hidden", false);

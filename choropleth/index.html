@@ -14,6 +14,13 @@
       	/*fill-opacity: 1 ;*/
       }
 
+      #select {
+      	position: absolute;
+      	width: 150px;
+      	height: 150px;
+      	fill: rgba(235, 237, 239, 0.4);
+      }
+
 	  #tooltip {
 	  	position: absolute;
 	  	width: 150px;
@@ -40,13 +47,98 @@
 	  	line-height: 20px;
 	  }
 
+	  		#container {
+				width: 1000px;
+				margin: 25px auto 25px auto;
+				padding: 50px 50px 50px 50px;
+				background-color: white;
+				box-shadow: 0 0 20px #ccc;
+			}
+
+			h1 {
+				margin-bottom: 25px;
+				font-size: 24px;
+				font-weight: bold;
+			}
+
+			h2 {
+				margin-bottom: 25px;
+				font-size: 14px;
+			}
+
+			p {
+				margin-bottom: 25px;
+				font-size: 14px;
+				line-height: 18px;
+			}
+
+			.keeper {
+				overflow: hidden;
+			}
+
+			.one {
+				width: 70%;
+				height: 400px;
+				float: left;
+				}
+
+			.two {
+				margin-left: 70%;
+				height: 400px;
+			}
+			.btn-group button {
+				background-color: #4CAF50; /* Green background */
+				border: 1px solid green; /* Green border */
+				color: white; /* White text */
+				padding: 10px 24px; /* Some padding */
+				cursor: pointer; /* Pointer/hand icon */
+				width: 50%; /* Set a width if needed */
+				display: block; /* Make the buttons appear below each other */
+			}
+			.btn-group button:not(:last-child) {
+				border-bottom: none; /* Prevent double borders */
+			}
+			.btn-group button:hover {
+				background-color: #3e8e41;
+			}
+			.btn-group {
+				margin: 25px auto auto auto;
+			}
     </style>
   </head>
   <body>
   	<div id="tooltip" class="hidden">
-  		<p><strong>Department</strong></p>
   		<p><span id="name"></span></p>
 	</div>
-  	<script type="text/javascript" src="income_map_preprocessed.js"></script>
+			<!-- New HTML structure and content! -->
+		<div id="container">
+
+			<h1>Peruvian Household Income</h1>
+			
+			<p>Rerum culpa qui libero. Non quidem suscipit facere ea totam. Sed ut reprehenderit non. Consequuntur alias minima qui saepe enim. Voluptatem quia quia eligendi temporibus dolor voluptas voluptatem recusandae. Quia minima delectus aliquid totam voluptatem enim alias quas.<p>
+
+			<div class="keeper">
+				<div class="one">
+					<h2>Average Annual Household Income in Peru&ndash;2016</h2>
+			    </div>
+				<div class="two">
+					<div class="btn-group">
+						<button type="button" id="btn-one">Net Income</button>
+					  	<button type="button" id="btn-two">Food Expenditure</button>
+					  	<button type="button">Education Expenditure</button>
+					</div>
+				</div>
+			</div>
+
+			<p>Reiciendis reiciendis quia labore porro ratione. Asperiores est ipsam voluptate. Itaque in magni qui veritatis aliquam fugiat. Et qui aliquid et. Assumenda qui et quis ut. Dolores aut ea fuga corporis enim. Corporis iusto facere quidem architecto rerum pariatur. Libero nam et cupiditate quibusdam.</p>
+			
+			<p>Est voluptates sint rerum nostrum dignissimos. Accusantium eius voluptate et libero dignissimos. Aspernatur eum asperiores et rerum. Consequatur et in neque accusantium ipsam officiis. Eligendi ex quia praesentium voluptate nihil suscipit.</p>
+
+			<div id="footer">
+				<p><strong>Source:</strong> Data was derived from data compiled by Yan (Joann) Zhou at Argonne National Laboratory, U.S. Department of Energy. See the &rdquo;<a href="https://www.anl.gov/energy-systems/project/light-duty-electric-drive-vehicles-monthly-sales-updates">Light Duty Electric Drive Vehicles Monthly Sales Updates</a>&ldquo; project. Some values are estimates; others have been interpolated for this project.</p>
+			</div>
+
+		</div>
+  	<script type="text/javascript" src="income_map_shadow.js"></script>
   </body>
  </html>
